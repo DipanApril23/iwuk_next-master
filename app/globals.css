@@ -1,0 +1,215 @@
+/* app/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply border-gray-200;
+    cursor: none !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #08111f;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-family: "Inter", sans-serif;
+    background: #08111f;
+  }
+
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea {
+    cursor: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM TESTIMONIALS MODULAR STYLES
+   ========================================================================== */
+
+/* Default/Inactive Card State Layout */
+.testimonial-card {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.005)
+  );
+  transition:
+    border-color 0.6s ease,
+    background 0.6s ease,
+    box-shadow 0.6s ease,
+    filter 0.6s ease;
+  filter: blur(0.5px) opacity(0.55);
+}
+
+/* Active Front Highlight Class Overrides */
+.swiper-slide-active .testimonial-card {
+  filter: blur(0px) opacity(1);
+  border-color: rgba(245, 199, 107, 0.25);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.015)
+  );
+  box-shadow:
+    0 20px 40px -15px rgba(15, 21, 46, 0.5),
+    0 0 30px -5px rgba(245, 199, 107, 0.06);
+}
+
+/* Show radial micro mesh light on active */
+.swiper-slide-active .active-glow-layer {
+  opacity: 1;
+}
+
+/* Bring text into high visibility contrast inside active slide */
+.swiper-slide-active .review-text {
+  color: #ffffff;
+}
+
+/* Elevate Icon container on Active */
+.swiper-slide-active .quote-badge {
+  background: rgba(245, 199, 107, 0.1);
+  border-color: rgba(245, 199, 107, 0.2);
+}
+
+.swiper-slide-active .quote-icon {
+  color: #f5c76b;
+}
+
+/* Elevate User Initial Avatar on Active */
+.swiper-slide-active .avatar-badge {
+  background: rgba(245, 199, 107, 0.12);
+  border-color: rgba(245, 199, 107, 0.25);
+  color: #f5c76b;
+}
+
+/* Custom Scrollbar for Modal Text Container */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(245, 199, 107, 0.2);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #f5c76b;
+}
+
+/* Pagination Dot Standards */
+.custom-swiper-pagination.swiper-pagination-js-initialised {
+  position: relative !important;
+  bottom: 0 !important;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  margin: 0 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 3px;
+  background: #f5c76b;
+}
+
+
+
+/* Floating Background Animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-orb-1,
+.floating-orb-2 {
+  animation: floating 8s ease-in-out infinite;
+}
+
+/* Mobile Performance */
+@media (max-width: 768px) {
+  .office-card {
+    transform: none !important;
+  }
+}
