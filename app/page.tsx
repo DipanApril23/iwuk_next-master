@@ -14,6 +14,7 @@ import Testimonials from "@/components/Testimonials";
 import ContactSection from "@/components/ContactSection";
 import OfficeSection from "@/components/OfficeSection";
 import Footer from "@/components/Footer";
+import CertificationsSection from "@/components/CirtificationsSection";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -53,6 +54,7 @@ export default function Home() {
           <Hero />
           <TeamSection />
           <Services />
+          <CertificationsSection />
           <WhyChooseUs />
           <Testimonials />
           <OfficeSection />

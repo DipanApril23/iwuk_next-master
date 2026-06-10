@@ -437,7 +437,7 @@ export default function TeamSection() {
           </div>
 
           {/* Premium Floating Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: [0.32, 0.72, 0, 1] }}
@@ -468,7 +468,7 @@ export default function TeamSection() {
                 </h3>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Top Right Badge */}
           <motion.div
